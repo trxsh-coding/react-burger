@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    height: 88px;
+    background-color: #1C1C21;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo  {
+    display: flex;
+}
+.logo svg {
+    height: 40px !important;
+}

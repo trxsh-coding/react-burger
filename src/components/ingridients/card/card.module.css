@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 272px;
+    position: relative;
+}
+
+.description {
+    height: 48px;
+    overflow-wrap: break-word;
+}
