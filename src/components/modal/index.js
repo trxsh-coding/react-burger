@@ -1,6 +1,7 @@
 import React from 'react'
 import modalStyles from './modal.module.css'
 import {CloseIcon} from "@ya.praktikum/react-developer-burger-ui-components";
+import PropTypes from "prop-types";
 
 const Modal = ({open, children, onClose}) => {
 
@@ -20,4 +21,9 @@ const Modal = ({open, children, onClose}) => {
 
 }
 
+Modal.propTypes = {
+    open: PropTypes.bool.isRequired,
+    children: PropTypes.element,
+    onClose: PropTypes.func,
+}
 export default Modal;
