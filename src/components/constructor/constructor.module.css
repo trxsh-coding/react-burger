@@ -3,3 +3,7 @@
     height: 60vh;
     overflow: scroll;
 }
+.button svg {
+    width: 33px;
+    height: 33px;
+}

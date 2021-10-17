@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.options p{
+    color: #8585AD;
+}

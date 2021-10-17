@@ -10,6 +10,6 @@ export const getElementPosition = (index, itemsLength) => {
         case index === itemsLength - 1:
             return elementPositions.bottom;
         default:
-            return 'undefined'
+            return 'undefined';
     }
 }

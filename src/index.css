@@ -35,3 +35,15 @@ code {
 .space-between {
   justify-content: space-between;
 }
+.justify-end {
+  justify-content: end;
+}
+
+
+.relative {
+  position: relative;
+}
+
+.pointer {
+  cursor: pointer;
+}
