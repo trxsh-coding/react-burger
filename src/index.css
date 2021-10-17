@@ -47,3 +47,6 @@ code {
 .pointer {
   cursor: pointer;
 }
+.column {
+  flex-direction: column;
+}

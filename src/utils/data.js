@@ -210,3 +210,5 @@ export const data = [
         "__v":0
     }
 ]
+
+export const dataFetchUrl = 'https://norma.nomoreparties.space/api/ingredients';

@@ -4,28 +4,26 @@ import {Tab} from "@ya.praktikum/react-developer-burger-ui-components";
 import {getItemsByType, getTitle, ingredientsTabs, ingredientsTabsTitle} from "./utils";
 import CardList from "./cardList";
 import Modal from "../modal";
-import CardDetails from "./card/cardDetails";
-import {data} from "../../utils/data";
+import IngredientDetails from "./card/IngredientDetails";
 
-const BurgerIngredients = () => {
-
+const BurgerIngredients = ({items}) => {
     const [currentTab, setCurrentTab] = useState(ingredientsTabs.bun)
     const [currentItemId, setCurrentItemId] = useState(null);
     const resetCurrentItem = () => setCurrentItemId(null);
     const onSetCurrentTab = (tab) => setCurrentTab(tab);
     const onSetCurrentItem = (id) => setCurrentItemId(id);
 
-    const currentItem = data.find(el => el._id === currentItemId)
+    const currentItem = items.find(el => el._id === currentItemId)
 
 
-    const bunItems = getItemsByType(ingredientsTabs.bun);
-    const sauceItems = getItemsByType(ingredientsTabs.sauce);
-    const mainItems = getItemsByType(ingredientsTabs.main);
+    const bunItems = getItemsByType(ingredientsTabs.bun, items);
+    const sauceItems = getItemsByType(ingredientsTabs.sauce, items);
+    const mainItems = getItemsByType(ingredientsTabs.main, items);
     console.log(bunItems)
     return (
         <>
-            <Modal open={!!currentItemId} onClose={resetCurrentItem}>
-                <CardDetails {...currentItem} />
+            <Modal open={!!currentItemId} onClose={resetCurrentItem} title='Детали ингредиента'>
+                <IngredientDetails {...currentItem} />
             </Modal>
             <div className={`${ingredientsStyles.wrapper} pt-10 pb-5`}>
                 <p className="text text_type_main-large text-align-left">

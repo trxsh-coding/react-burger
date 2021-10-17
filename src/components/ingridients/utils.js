@@ -1,4 +1,3 @@
-import {data} from "../../utils/data";
 
 export const ingredientsTabs = {
     bun: 'bun',
@@ -13,4 +12,4 @@ export const ingredientsTabsTitle = {
 
 export const getTitle = () => 'Соберите бургер';
 
-export const getItemsByType = (type) => data.filter(el => el.type === type);
+export const getItemsByType = (type, items) => items.filter(el => el.type === type);
