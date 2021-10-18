@@ -2,9 +2,10 @@ import constructorStyles from './constructor.module.css'
 import {Button, ConstructorElement, CurrencyIcon, DragIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import {getElementPosition} from "./utils";
 import Modal from "../modal";
-import acceptLogo from '../../images/graphics.svg'
 import {useState} from "react";
 import OrderDetails from "./OrderDetails";
+import PropTypes from "prop-types";
+import {cardItemProps} from "../../utils/types";
 
 const BurgerConstructor = ({items}) => {
 
@@ -21,7 +22,7 @@ const BurgerConstructor = ({items}) => {
                    {items.map((item, index) => (
                        <div className='flex align-center mb-4' key={item._id}>
                            <DragIcon type="primary" />
-                           <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
+                           <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}} className='ml-4'>
                                <ConstructorElement
                                    type={getElementPosition(index, items.length)}
                                    key={item.id}
@@ -45,6 +46,10 @@ const BurgerConstructor = ({items}) => {
            </div>
        </>
     )
+}
+
+BurgerConstructor.propTypes = {
+    items: PropTypes.arrayOf(cardItemProps).isRequired,
 }
 
 export default BurgerConstructor;
