@@ -5,10 +5,13 @@ import {getItemsByType, getTitle, ingredientsTabs, ingredientsTabsTitle} from ".
 import CardList from "./cardList";
 import Modal from "../modal";
 import IngredientDetails from "./card/IngredientDetails";
+import PropTypes from "prop-types";
+import {cardItemProps} from "../../utils/types";
 
 const BurgerIngredients = ({items}) => {
     const [currentTab, setCurrentTab] = useState(ingredientsTabs.bun)
     const [currentItemId, setCurrentItemId] = useState(null);
+
     const resetCurrentItem = () => setCurrentItemId(null);
     const onSetCurrentTab = (tab) => setCurrentTab(tab);
     const onSetCurrentItem = (id) => setCurrentItemId(id);
@@ -19,7 +22,8 @@ const BurgerIngredients = ({items}) => {
     const bunItems = getItemsByType(ingredientsTabs.bun, items);
     const sauceItems = getItemsByType(ingredientsTabs.sauce, items);
     const mainItems = getItemsByType(ingredientsTabs.main, items);
-    console.log(bunItems)
+
+
     return (
         <>
             <Modal open={!!currentItemId} onClose={resetCurrentItem} title='Детали ингредиента'>
@@ -63,6 +67,10 @@ const BurgerIngredients = ({items}) => {
             </div>
         </>
     )
+}
+
+BurgerIngredients.propTypes = {
+    items: PropTypes.arrayOf(cardItemProps).isRequired,
 }
 
 export default BurgerIngredients;
