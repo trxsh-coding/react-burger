@@ -4,7 +4,7 @@
 
 .list {
     height: 70vh;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .list::-webkit-scrollbar {
 }

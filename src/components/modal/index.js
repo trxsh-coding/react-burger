@@ -8,7 +8,6 @@ import ModalOverlay from "./ModalOverlay";
 const modalRoot = document.getElementById("react-modals");
 
 
-
 const Modal = ({open, children, onClose, title}) => {
 
     useEffect(() => {
@@ -27,19 +26,21 @@ const Modal = ({open, children, onClose, title}) => {
 
     return ReactDOM.createPortal(
         open && (
-            <div className={modalStyles.wrapper} >
-                <ModalOverlay  onClose={onClose}/>
+            <div className={modalStyles.wrapper}>
+                <ModalOverlay onClose={onClose}/>
                 <div className={`${modalStyles.content} pt-10 pb-10`}>
-                    <p className="text text_type_main-large">
-                        {title}
-                    </p>
-                    <div className={modalStyles.close} onClick={onClose}>
-                        <CloseIcon type="primary" />
+                    <div className={modalStyles.header}>
+                        <p className="text text_type_main-large">
+                            {title}
+                        </p>
+                        <CloseIcon type="primary"/>
                     </div>
-                    {children}
+                    <div className={modalStyles.annotation}>
+                        {children}
+                    </div>
                 </div>
             </div>
-        ),modalRoot
+        ), modalRoot
     )
 
 }

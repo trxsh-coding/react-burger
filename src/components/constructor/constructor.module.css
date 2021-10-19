@@ -1,7 +1,6 @@
 .wrapper {
     width: 600px;
     height: 60vh;
-    overflow: scroll;
 }
 .button svg {
     width: 33px;
@@ -14,3 +13,19 @@
     gap: 10px;
     overflow-x: hidden;
 }
+
+.list {
+    height: 464px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+
+
+.item {
+    width: auto;
+    margin-bottom: 16px;
+}
+
+

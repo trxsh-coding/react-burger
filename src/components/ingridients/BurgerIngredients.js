@@ -30,10 +30,10 @@ const BurgerIngredients = ({items}) => {
                 <IngredientDetails {...currentItem} />
             </Modal>
             <div className={`${ingredientsStyles.wrapper} pt-10 pb-5`}>
-                <p className="text text_type_main-large text-align-left">
+                <p className="text text_type_main-large text-align-left pb-5">
                     {getTitle()}
                 </p>
-                <div style={{display: 'flex'}}>
+                <div className='flex'>
                     <Tab value={ingredientsTabs.bun}
                          active={currentTab === ingredientsTabs.bun}
                          onClick={onSetCurrentTab}>
@@ -50,7 +50,7 @@ const BurgerIngredients = ({items}) => {
                         {ingredientsTabsTitle[ingredientsTabs.main]}
                     </Tab>
                 </div>
-                <div className={ingredientsStyles.list}>
+                <div className={`${ingredientsStyles.list} scrollbar`}>
                     <CardList
                         onOpen={onSetCurrentItem}
                         title={ingredientsTabsTitle[ingredientsTabs.bun]}
