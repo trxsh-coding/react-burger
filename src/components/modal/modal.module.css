@@ -20,7 +20,7 @@
 .content {
     border-radius: 40px;
     background-color: #1C1C21;
-    min-width: 720px;
+    width: 720px;
     position: relative;
     align-items: center;
     flex-direction: column;

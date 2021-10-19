@@ -8,10 +8,10 @@ const OrderDetails = () => {
                 идентификатор заказа
             </p>
             <img src={acceptLogo} alt="acceptLogo"/>
-            <p className="text text_type_main-medium mb-15">
+            <p className="text text_type_main-default mb-15">
                 Ваш заказ начали готовить
             </p>
-            <p className="text text_type_main-medium mb-15">
+            <p className="text text_type_main-default mb-15">
                 Дождитесь готовности на орбитальной станции
             </p>
         </div>
