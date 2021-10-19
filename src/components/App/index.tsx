@@ -1,12 +1,11 @@
-
-import './App.css';
-import AppHeader from "./components/header/AppHeader";
-import BurgerIngredients from "./components/ingridients/BurgerIngredients";
-import BurgerConstructor from "./components/constructor/BurgerConstructor";
-import {dataFetchUrl} from "./utils/data";
+import './app.module.css';
+import AppHeader from "../header/AppHeader";
+import BurgerIngredients from "../ingridients/BurgerIngredients";
+import BurgerConstructor from "../constructor/BurgerConstructor";
+import {dataFetchUrl} from "../../utils/data";
 import {useEffect, useState} from "react";
 
-function App() {
+function Index() {
 
   const [data, setData] = useState<any>([]);
 
@@ -17,14 +16,18 @@ function App() {
   const onDataFetch = async (url : string) => {
       fetch(url)
           .then((response) => {
-              return response.json();
+              console.log('response', response)
+              if (response.ok) {
+                  return response.json();
+              }
+              return Promise.reject(`Ошибка ${response.status}`);
           })
           .then(({data}) => {
               setData(data)
           })
           .catch(e => console.log(e))
   }
-
+    console.log(data)
   return (
     <div className="App">
       <AppHeader />
@@ -36,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default Index;

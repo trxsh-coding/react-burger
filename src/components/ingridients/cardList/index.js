@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import {ingredientsTabsTitle} from "../utils";
 import Card from '../card'
 import listStyles from './list.module.css'
 import {cardItemProps} from "../../../utils/types";

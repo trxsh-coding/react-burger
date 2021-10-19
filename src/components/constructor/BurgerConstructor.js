@@ -1,5 +1,5 @@
 import constructorStyles from './constructor.module.css'
-import {Button, ConstructorElement, CurrencyIcon, DragIcon} from "@ya.praktikum/react-developer-burger-ui-components";
+import {Button, ConstructorElement, CurrencyIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import {getElementPosition} from "./utils";
 import Modal from "../modal";
 import {useState} from "react";
@@ -8,9 +8,11 @@ import PropTypes from "prop-types";
 import {cardItemProps} from "../../utils/types";
 
 const BurgerConstructor = ({items}) => {
-
     const [isModalOpen, setModalOpen] = useState(false);
-    return (
+    console.log(items)
+    const burgerConstructorItems = [...items, items[0]]
+    console.log(burgerConstructorItems)
+    return items && (
        <>
            <Modal
                open={isModalOpen}
@@ -19,14 +21,13 @@ const BurgerConstructor = ({items}) => {
            </Modal>
            <div>
                <div className={`${constructorStyles.wrapper} mt-25`}>
-                   {items.map((item, index) => (
+                   {burgerConstructorItems.map((item, index) => (
                        <div className='flex align-center mb-4' key={item._id}>
-                           <DragIcon type="primary" />
-                           <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}} className='ml-4'>
+                           <div  className={`${constructorStyles.constructor} ml-4`}>
                                <ConstructorElement
-                                   type={getElementPosition(index, items.length)}
-                                   key={item.id}
-                                   price={item.price}
+                                   type={getElementPosition(index, burgerConstructorItems.length)}
+                                   key={item._id}
+                                   price={item?.price}
                                    text={item.name}
                                    thumbnail={item.image}/>
                            </div>

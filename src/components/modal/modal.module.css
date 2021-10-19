@@ -30,7 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     min-height: 400px;
-    min-width: 400px;
+    min-width: 720px;
     transform: scale(0.6);
     transition: opacity 250ms 250ms ease, transform 300ms 250ms ease;
 }

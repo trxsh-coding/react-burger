@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export const cardItemProps = PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     type: PropTypes.string,
     proteins: PropTypes.number.isRequired,

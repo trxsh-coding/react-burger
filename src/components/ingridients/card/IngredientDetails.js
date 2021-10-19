@@ -1,8 +1,8 @@
 
 import React from "react";
-import cardDetailsStyles from './IngredientDetails.css'
 import {cardItemProps} from "../../../utils/types";
 import Card from "./index";
+
 const IngredientDetails = (props) => {
     const {image, proteins, fat, carbohydrates, name} = props;
     return (
