@@ -1,6 +1,5 @@
 import constructorStyles from './constructor.module.css'
 import {Button, ConstructorElement, CurrencyIcon} from "@ya.praktikum/react-developer-burger-ui-components";
-import {getElementPosition} from "./utils";
 import Modal from "../modal";
 import {useState} from "react";
 import OrderDetails from "./OrderDetails";
@@ -14,8 +13,6 @@ const BurgerConstructor = ({items}) => {
     const bunItem = items[0];
     const constructorItems = [...items].slice(1, items.length)
         .filter(el => el.type !== ingredientsTabs.bun);
-
-    console.log(constructorItems)
 
     return (
         <>
