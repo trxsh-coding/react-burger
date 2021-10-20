@@ -48,7 +48,7 @@ const BurgerConstructor = ({items}) => {
                             thumbnail={bunItem.image}/>
                     </div>
                 </div>
-                <div className={`${constructorStyles.button} flex justify-end mt-10 align-center`}>
+                <div className={`${constructorStyles.button} flex justify-end align-center`}>
                     <div className='flex mr-10'>
                         <p className="text text_type_digits-medium mr-2">610</p>
                         <CurrencyIcon type='primary'/>

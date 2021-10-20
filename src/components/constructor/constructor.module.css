@@ -1,6 +1,6 @@
 .wrapper {
     width: 600px;
-    height: 60vh;
+    height: 80vh;
 }
 .button svg {
     width: 33px;
@@ -15,7 +15,7 @@
 }
 
 .list {
-    height: 464px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
@@ -24,7 +24,8 @@
 
 
 .item {
-    width: auto;
+    box-sizing: content-box;
+    flex: 1;
     margin-bottom: 16px;
 }
 

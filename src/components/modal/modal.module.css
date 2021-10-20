@@ -18,10 +18,11 @@
     opacity: 0.6;
 }
 .content {
+    box-sizing: border-box;
     border-radius: 40px;
     background-color: #1C1C21;
     width: 720px;
-    position: relative;
+    z-index: 1;
     align-items: center;
     flex-direction: column;
     display: flex;
@@ -31,11 +32,12 @@
 }
 
 .header {
+    flex: 1;
+    flex-flow: row nowrap;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    width:100%;
-    line-height: 100%;
     padding-left: 40px;
     padding-right: 40px;
 }
