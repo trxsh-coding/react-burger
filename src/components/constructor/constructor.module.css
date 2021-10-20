@@ -12,6 +12,7 @@
     flex-direction: column;
     gap: 10px;
     overflow-x: hidden;
+    position: relative;
 }
 
 .list {
@@ -25,8 +26,8 @@
 
 .item {
     box-sizing: content-box;
-    flex: 1;
     margin-bottom: 16px;
+
 }
 
 

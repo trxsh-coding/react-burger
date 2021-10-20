@@ -33,7 +33,7 @@ const Modal = ({open, children, onClose, title}) => {
                         <p className="text text_type_main-large">
                             {title}
                         </p>
-                        <CloseIcon type="primary"/>
+                        <CloseIcon type="primary" onClick={onClose}/>
                     </div>
                     <div className={modalStyles.annotation}>
                         {children}

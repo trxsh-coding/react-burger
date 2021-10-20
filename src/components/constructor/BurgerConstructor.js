@@ -1,5 +1,5 @@
 import constructorStyles from './constructor.module.css'
-import {Button, ConstructorElement, CurrencyIcon} from "@ya.praktikum/react-developer-burger-ui-components";
+import {Button, ConstructorElement, CurrencyIcon, DragIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import Modal from "../modal";
 import {useState} from "react";
 import OrderDetails from "./OrderDetails";
@@ -28,11 +28,12 @@ const BurgerConstructor = ({items}) => {
                             type='top'
                             isLocked
                             price={bunItem.price}
-                            text={bunItem.name}
+                            text={bunItem.name + ' (верх)'}
                             thumbnail={bunItem.image}/>
                         <div className={`${constructorStyles.list} scrollbar`}>
                             {constructorItems.map((item) => (
                                 <div className={constructorStyles.item} key={item._id}>
+                                    <DragIcon type='primary' />
                                     <ConstructorElement
                                         price={item.price}
                                         text={item.name}
@@ -44,7 +45,7 @@ const BurgerConstructor = ({items}) => {
                             type='bottom'
                             isLocked
                             price={bunItem.price}
-                            text={bunItem.name}
+                            text={bunItem.name + ' (низ)'}
                             thumbnail={bunItem.image}/>
                     </div>
                 </div>
