@@ -1,0 +1,10 @@
+.wrapper {
+    width: 600px;
+}
+
+.list {
+    height: 70vh;
+    overflow-y: scroll;
+}
+.list::-webkit-scrollbar {
+}

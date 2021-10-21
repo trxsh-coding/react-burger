@@ -1,0 +1,34 @@
+.wrapper {
+    width: 600px;
+    height: 80vh;
+}
+.button svg {
+    width: 33px;
+    height: 33px;
+}
+
+.constructor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: hidden;
+    position: relative;
+    align-items: center;
+}
+
+.list {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+
+
+.item {
+    box-sizing: content-box;
+    margin-bottom: 16px;
+
+}
+
+
