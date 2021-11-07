@@ -5,9 +5,10 @@ import {cardItemProps} from "../../../utils/types";
 import React from "react";
 
 const CardList = (props) => {
-    const {items, title, onOpen} = props;
+    const {items, title, onOpen, count} = props;
+
     return (
-        <div className='pt-10'>
+        <div>
             <div className='pb-6 pt-10'>
                 <p className="text text_type_main-medium text-align-left">
                     {title}
@@ -16,7 +17,7 @@ const CardList = (props) => {
             <div className={`${listStyles.wrapper} pt-6 pl-4`}>
                 {items.map((item) => (
                     <React.Fragment key={item._id}>
-                        <Card  {...item} onOpen={onOpen}/>
+                        <Card  {...item} onOpen={onOpen} count={count}/>
                     </React.Fragment>
                 ))}
             </div>
@@ -27,6 +28,7 @@ const CardList = (props) => {
 CardList.propTypes = {
     title: PropTypes.string.isRequired,
     items: PropTypes.arrayOf(cardItemProps).isRequired,
+    count: PropTypes.func,
 }
 
 export default CardList;
