@@ -7,7 +7,66 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.container-wrapper {
+  width: 1240px;
+  margin: auto;
+}
+.text-align-left {
+  text-align: left;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+.justify-end {
+  justify-content: end;
+}
+
+
+.relative {
+  position: relative;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.column {
+  flex-direction: column;
+}
+.scrollbar {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+.scrollbar::-webkit-scrollbar-track {
+  background: #2F2F37;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #8585AD;
 }

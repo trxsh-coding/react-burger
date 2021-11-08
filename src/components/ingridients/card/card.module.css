@@ -1,0 +1,10 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 272px;
+}
+
+.description {
+    height: 48px;
+    overflow-wrap: break-word;
+}

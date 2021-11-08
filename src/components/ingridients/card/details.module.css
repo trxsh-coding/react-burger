@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options p{
+    color: #8585AD;
+}
+
+.nutritional {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nutritional p {
+    margin: 8px;
+}

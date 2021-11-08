@@ -1,0 +1,46 @@
+.wrapper {
+    width: 600px;
+    height: 80vh;
+}
+
+.button svg {
+    width: 33px;
+    height: 33px;
+}
+
+.constructor {
+    justify-content: space-between;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: hidden;
+    position: relative;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: 50vh;
+}
+
+
+.item {
+    box-sizing: content-box;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 32px;
+}
+
+.icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bottom {
+    margin-top: auto;
+}
