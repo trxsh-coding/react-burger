@@ -11,8 +11,6 @@ import {
 import CardList from "./cardList";
 import Modal from "../modal";
 import IngredientDetails from "./card/IngredientDetails";
-import PropTypes from "prop-types";
-import {cardItemProps} from "../../utils/types";
 import {useDispatch, useSelector} from "react-redux";
 import {CLEAR_INGREDIENTS_DETAILS, SET_INGREDIENTS_DETAILS} from "../../services/actions/ingredients";
 
@@ -125,8 +123,5 @@ const BurgerIngredients = ({items}) => {
     )
 }
 
-BurgerIngredients.propTypes = {
-    items: PropTypes.arrayOf(cardItemProps).isRequired,
-}
 
 export default BurgerIngredients;

@@ -1,4 +1,9 @@
-import {ADD_CONSTRUCTOR_ITEM, REMOVE_CONSTRUCTOR_ITEM, SORT_CONSTRUCTOR_ITEM} from "../actions/constructor";
+import {
+    ADD_CONSTRUCTOR_ITEM,
+    CLEAR_CONSTRUCTOR_ITEMS,
+    REMOVE_CONSTRUCTOR_ITEM,
+    SORT_CONSTRUCTOR_ITEM
+} from "../actions/constructor";
 import {ingredientsTypes} from "../../components/ingridients/utils";
 import {nanoid} from "@reduxjs/toolkit";
 
@@ -49,6 +54,9 @@ export const constructorReducer = (state = initialState, action) => {
                 ...state,
                 main: list
             })
+        }
+        case CLEAR_CONSTRUCTOR_ITEMS: {
+            return initialState;
         }
         default:
             return state

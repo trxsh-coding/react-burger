@@ -1,4 +1,5 @@
-import {orderFetchUrl} from "../../utils/data";
+import {baseUrl} from "../../utils/data";
+import {CLEAR_CONSTRUCTOR_ITEMS} from "./constructor";
 
 export const GET_ORDER_REQUEST = 'GET_ORDER_REQUEST';
 export const GET_ORDER_SUCCESS = 'GET_ORDER_SUCCESS';
@@ -7,7 +8,7 @@ export const CLEAR_ORDER = 'CLEAR_ORDER';
 
 export const getOrderNo = (ingredients) => dispatch => {
     dispatch({type: GET_ORDER_REQUEST});
-    fetch(orderFetchUrl, {
+    fetch(`${baseUrl}/orders`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ingredients})
@@ -19,10 +20,13 @@ export const getOrderNo = (ingredients) => dispatch => {
 
             return Promise.reject(`Ошибка ${response.status}`);
         })
-        .then(response => dispatch({
-                type: GET_ORDER_SUCCESS,
-                payload: response.order.number
-            })
+        .then(response => {
+                dispatch({
+                    type: GET_ORDER_SUCCESS,
+                    payload: response.order.number
+                })
+                dispatch({type: CLEAR_CONSTRUCTOR_ITEMS})
+            }
         )
         .catch(_ => dispatch({type: GET_ORDER_ERROR}));
 };

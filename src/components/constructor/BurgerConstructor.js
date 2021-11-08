@@ -2,8 +2,6 @@ import constructorStyles from './constructor.module.css'
 import {Button, ConstructorElement, CurrencyIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 import Modal from "../modal";
 import OrderDetails from "./OrderDetails";
-import PropTypes from "prop-types";
-import {cardItemProps} from "../../utils/types";
 import {useDrop} from "react-dnd";
 import {useDispatch, useSelector} from "react-redux";
 import {ADD_CONSTRUCTOR_ITEM, REMOVE_CONSTRUCTOR_ITEM} from "../../services/actions/constructor";
@@ -47,7 +45,7 @@ const BurgerConstructor = () => {
     return (
         <>
             <Modal
-                open={orderNumber}
+                open={!!orderNumber}
                 onClose={onOrderClear}>
                 <OrderDetails orderNumber={orderNumber}/>
             </Modal>
@@ -100,8 +98,6 @@ const BurgerConstructor = () => {
     )
 }
 
-BurgerConstructor.propTypes = {
-    items: PropTypes.arrayOf(cardItemProps).isRequired,
-}
+
 
 export default BurgerConstructor;

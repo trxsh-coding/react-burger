@@ -1,4 +1,4 @@
-import {ingredientsFetchUrl} from "../../utils/data";
+import {baseUrl} from "../../utils/data";
 
 export const GET_INGREDIENTS_REQUEST = 'GET_INGREDIENTS_REQUEST';
 export const GET_INGREDIENTS_SUCCESS = 'GET_INGREDIENTS_SUCCESS';
@@ -12,7 +12,7 @@ export const onIngredientsGetItems = () => (dispatch) => {
         type:GET_INGREDIENTS_REQUEST,
     })
 
-    fetch(ingredientsFetchUrl)
+    fetch(`${baseUrl}/ingredients`)
         .then((response) => {
             if (response.ok) {
                 return response.json();
