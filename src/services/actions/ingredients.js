@@ -1,4 +1,5 @@
 import {baseUrl} from "../../utils/data";
+import {checkResponse} from "../../utils/api";
 
 export const GET_INGREDIENTS_REQUEST = 'GET_INGREDIENTS_REQUEST';
 export const GET_INGREDIENTS_SUCCESS = 'GET_INGREDIENTS_SUCCESS';
@@ -13,12 +14,7 @@ export const onIngredientsGetItems = () => (dispatch) => {
     })
 
     fetch(`${baseUrl}/ingredients`)
-        .then((response) => {
-            if (response.ok) {
-                return response.json();
-            }
-            return Promise.reject(`Ошибка ${response.status}`);
-        })
+        .then(checkResponse)
         .then(({data}) => {
             dispatch({
                 type:GET_INGREDIENTS_SUCCESS,

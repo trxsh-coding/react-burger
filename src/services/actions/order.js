@@ -1,5 +1,6 @@
 import {baseUrl} from "../../utils/data";
 import {CLEAR_CONSTRUCTOR_ITEMS} from "./constructor";
+import {checkResponse} from "../../utils/api";
 
 export const GET_ORDER_REQUEST = 'GET_ORDER_REQUEST';
 export const GET_ORDER_SUCCESS = 'GET_ORDER_SUCCESS';
@@ -13,13 +14,7 @@ export const getOrderNo = (ingredients) => dispatch => {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ingredients})
     })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-
-            return Promise.reject(`Ошибка ${response.status}`);
-        })
+        .then(checkResponse)
         .then(response => {
                 dispatch({
                     type: GET_ORDER_SUCCESS,

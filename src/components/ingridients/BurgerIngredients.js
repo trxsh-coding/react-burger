@@ -14,9 +14,14 @@ import IngredientDetails from "./card/IngredientDetails";
 import {useDispatch, useSelector} from "react-redux";
 import {CLEAR_INGREDIENTS_DETAILS, SET_INGREDIENTS_DETAILS} from "../../services/actions/ingredients";
 
-const BurgerIngredients = ({items}) => {
+const BurgerIngredients = () => {
     const [currentTab, setCurrentTab] = useState(ingredientsTypes.bun)
     const dispatch = useDispatch();
+
+    const {
+        list: items
+    } = useSelector(state => state.ingredients);
+
     const resetCurrentItem = _ => dispatch({type: CLEAR_INGREDIENTS_DETAILS});
     const onSetCurrentItem = (item) => dispatch({type: SET_INGREDIENTS_DETAILS, payload: item});
 
